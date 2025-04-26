@@ -99,9 +99,12 @@ class Player(pygame.sprite.Sprite):
                 all_sprites.add(bullet)
                 bullets.add(bullet)
             elif self.power_level >= 2:
-                bullet1 = Bullet(self.rect.centerx, self.rect.top)
+                bullet1 = Bullet(self.rect.centerx - 10, self.rect.top)
+                bullet2 = Bullet(self.rect.centerx + 10, self.rect.top)
                 all_sprites.add(bullet1)
+                all_sprites.add(bullet2)
                 bullets.add(bullet1)
+                bullets.add(bullet2)
 
     def hide(self):
         self.hidden = True
@@ -145,7 +148,7 @@ class Bullet(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
         self.rect.centerx = x
         self.rect.bottom = y
-        self.speedy = 1
+        self.speedy = -1
 
     def update(self):
         self.rect.y += self.speedy
