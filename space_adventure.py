@@ -313,7 +313,7 @@ def main_game():
                 player.powerup()
         
         if game_over:
-            pass
+            running = False
             
         # Draw / render
         screen.fill(BLACK)
