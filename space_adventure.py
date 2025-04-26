@@ -267,7 +267,7 @@ def main_game():
         all_sprites.update()
         
         # Check bullet-enemy collisions
-        hits = pygame.sprite.groupcollide(enemies, bullets, False, True)
+        hits = pygame.sprite.groupcollide(enemies, bullets, True, True)
         for hit in hits:
             score += 10
             # Create explosion
